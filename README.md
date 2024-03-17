@@ -1,8 +1,9 @@
-# React + Vite
+# Lottery Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is lottery game dynamically desigened with high usability in React.js.
 
-Currently, two official plugins are available:
+Following Concepts are implemented:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Componnets with proper hierarchy. 
+- Current winnig condition is when sum of ticket numbers is equal to 15 but it is highly dynamic can be changed by just changing the return statement of winCondition function
+- Ticket of anynumbers can be generated
