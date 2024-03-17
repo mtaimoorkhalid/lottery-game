@@ -1,26 +1,23 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./index.css";
-import { genTicket, sum } from "../../helper/helper";
-export default function Lottery() {
-  const [lottery, setLottery] = useState(genTicket(3));
+import { genTicket } from "../../helper/helper";
+import Ticket from "../ticket";
+import Button from "../button";
+export default function Lottery({ num = 3, winCondition }) {
+  const [lottery, setLottery] = useState(genTicket(num));
 
-  const isWinning = sum(lottery);
+  const isWinning = winCondition(lottery);
   function getLottery() {
-    setLottery(genTicket(3));
+    setLottery(genTicket(num));
   }
 
   return (
     <div>
       <h1>Lottory Game</h1>
-      <div className="lottery">
-        <span>{lottery[0]}</span>
-        <span>{lottery[1]}</span>
-        <span>{lottery[2]}</span>
-      </div>
-      <button onClick={getLottery} style={{ margin: "10px" }}>
-        Get New Ticket
-      </button>
-      {isWinning === 15 && <h1>Congratulations you won!</h1>}
+      <Ticket ticket={lottery}></Ticket>
+      <Button action={getLottery}></Button>
+      {isWinning && <h1>Congratulations you won!</h1>}
     </div>
   );
 }
