@@ -5,3 +5,8 @@ export function genTicket(n) {
   }
   return arr;
 }
+export function sum(arr) {
+  return arr.reduce((sum, current) => {
+    return sum + current;
+  });
+}
